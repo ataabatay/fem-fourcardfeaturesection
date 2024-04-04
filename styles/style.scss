@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 30px;
+  background-color: hsl(0, 0%, 98%);
+  align-items: center;
+  min-height: 100vh;
+
+
+  .title-section {
+    max-width: 500px;
+    margin-bottom: 3rem;
+    text-align: center;
+
+    h1 {
+      font-weight: 200;
+      color: hsl(229, 6%, 66%);
+      font-size: 24px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      color: hsl(234, 12%, 34%);
+    }
+
+    h3 {
+      margin-top: 1em;
+      color: hsl(229, 6%, 66%);
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+
+  .cards {
+
+    @media (min-width:1440px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        'supervisor team-builder calculator'
+        'supervisor karma calculator';
+      gap: 0px 25px;
+    }
+
+    .single-card {
+      box-shadow: 0px 15px 42px -10px rgba(163, 165, 174, 0.75);
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      padding: 2rem;
+      height: 240px;
+      width: calc(375px - 60px);
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid;
+
+      h2 {
+        color: hsl(234, 12%, 34%);
+        margin-bottom: 5px;
+      }
+
+      p {
+        color: hsl(229, 6%, 66%);
+        font-size: 13px;
+        line-height: 1.5rem;
+      }
+
+      img {
+        width: 60px;
+        align-self: flex-end;
+        margin-top: auto;
+      }
+    }
+
+    .supervisor {
+      border-color: hsl(180, 62%, 55%);
+      grid-area: supervisor;
+      align-self: center;
+    }
+
+    .team-builder {
+      border-color: hsl(0, 78%, 62%);
+      grid-area: team-builder;
+    }
+
+    .karma {
+      border-color: hsl(34, 97%, 64%);
+      grid-area: karma;
+    }
+
+    .calculator {
+      border-color: hsl(212, 86%, 64%);
+      grid-area: calculator;
+      align-self: center;
+    }
+  }
+
+}
